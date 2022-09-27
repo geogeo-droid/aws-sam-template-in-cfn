@@ -9,8 +9,8 @@ phases:
   build:
     commands:
       - cd src/backend
-      - cfn-lint -t template.yaml --ignore-checks W2001
-      - aws cloudformation package --template-file template.yaml --s3-bucket ${S3_DEPLOY_BUCKET} --output-template-file packaged-template.yaml
+      - cfn-lint -t sam-templated.yaml --ignore-checks W2001
+      - aws cloudformation package --template-file sam-templated.yaml --s3-bucket ${S3_DEPLOY_BUCKET} --output-template-file packaged-sam-templated.yaml
 artifacts:
   files:
-    - src/backend/sam-templated.yaml
+    - src/backend/packaged-sam-templated.yaml
