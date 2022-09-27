@@ -92,7 +92,7 @@ Resources:
                 RoleArn: !GetAtt CodePipelineRole.Arn
                 Capabilities: CAPABILITY_NAMED_IAM
                 StackName: stack-backend-deploy
-                TemplatePath: BuildArtifact::src/backend/packaged-template.yaml
+                TemplatePath: BuildArtifact::src/backend/sam-templated.yaml
               InputArtifacts:
                 - Name: BuildArtifact
               RunOrder: 1
