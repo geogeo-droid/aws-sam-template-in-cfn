@@ -76,6 +76,8 @@ Resources:
                 - Name: BuildArtifact
         - Name: Deploy
           Actions:
+
+
             - Name: CreateChangeSet
               ActionTypeId:
                 Category: Deploy
@@ -94,6 +96,8 @@ Resources:
               InputArtifacts:
                 - Name: BuildArtifact
               RunOrder: 1
+
+
             - Name: ExecuteChangeSet
               ActionTypeId:
                 Category: Deploy
@@ -107,6 +111,7 @@ Resources:
                 Capabilities: CAPABILITY_NAMED_IAM
                 StackName: !Sub stack-backend-deploy
               RunOrder: 3
+
 
   CodeBuildRole:
     Type: "AWS::IAM::Role"
