@@ -58,6 +58,8 @@ Resources:
                 BranchName: !Ref SourceBranchName
               OutputArtifacts:
                 - Name: SourceCode
+
+
         - Name: Build
           Actions:
             - Name: Build
@@ -74,10 +76,10 @@ Resources:
                 - Name: SourceCode
               OutputArtifacts:
                 - Name: BuildArtifact
+
+
         - Name: Deploy
           Actions:
-
-
             - Name: CreateChangeSet
               ActionTypeId:
                 Category: Deploy
